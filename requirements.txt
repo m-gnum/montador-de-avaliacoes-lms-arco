@@ -1,0 +1,4 @@
+selenium>=4.6
+pandas
+openpyxl
+scikit-learn
