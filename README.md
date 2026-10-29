@@ -13,14 +13,14 @@ O script abre o Google Chrome, acessa a plataforma e executa os mesmos cliques q
 
 | Arquivo | Para que serve |
 |---|---|
-| `montador_avl_santoamerico.py` | Monta a prova **dentro do LMS da escola** (visão do usuário da escola): cria a prova, escolhe as questões por filtros, define turma, data e horário da aplicação impressa e baixa os materiais (prova e cartões). |
+| `montador_avaliacoes_lms.py` | Monta a prova **dentro do LMS da escola** (visão do usuário da escola): cria a prova, escolhe as questões por filtros, define turma, data e horário da aplicação impressa e baixa os materiais (prova e cartões). |
 | `montador_simulados_versao_backoffice (v2 - apenas montar questões).py` | Monta as questões de uma prova já criada no **backoffice** (bastidores do LMS, usado pelo time do SAS). Na v2, consulta a planilha de apoio para evitar repetir questões e manter questões agrupadas juntas. |
 | `classificar_questoes_por_similaridade_de_cossenos.py` | Script de preparação, usado uma única vez: identifica questões de Linguagens com o mesmo texto-base (similaridade de cosseno sobre TF-IDF de bigramas) e as agrupa. O resultado alimenta a aba `questoes_agrupadas`. |
 | `planilha_de_apoio_da_operacao.xlsx` | **Template** da planilha de apoio, com cabeçalhos e linhas fictícias de exemplo (veja abaixo). |
 
 ## Como funciona
 
-### Montador do LMS (`montador_avl_santoamerico.py`)
+### Montador do LMS (`montador_avaliacoes_lms.py`)
 
 1. Faz login e clica em *Criar prova*, informando o nome.
 2. Para cada linha da lista de filtros, aplica **nível, disciplina, banca e assunto** no banco de questões e seleciona a quantidade pedida de questões, sorteadas entre as encontradas.
@@ -97,7 +97,7 @@ Requisitos: Python 3 e Google Chrome. O driver do Chrome é baixado automaticame
 
 ```bash
 pip install -r requirements.txt
-python montador_avl_santoamerico.py
+python montador_avaliacoes_lms.py
 # ou
 python "montador_simulados_versao_backoffice (v2 - apenas montar questões).py"
 ```

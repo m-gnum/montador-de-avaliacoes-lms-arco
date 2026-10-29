@@ -107,14 +107,14 @@ def main():
     
     # Lista de bancas para análise
     bancas_analysis = [
-        'UNISA',
-        'MACKENZIE - SP', 
-        'FCMSC - SP', 
-        'ESPM - SP', 
-        'ALBERT ENSTEIN - SP', 
-        'FACUL. MED ABC-SP', 
-        'SAS ENEM',
-        ['FGV', 'FGV - SP']  # Trata as duas FGV como uma só
+        'BANCA EXEMPLO A',
+        'BANCA EXEMPLO B',
+        'BANCA EXEMPLO C',
+        'BANCA EXEMPLO D',
+        'BANCA EXEMPLO E',
+        'BANCA EXEMPLO F',
+        'BANCA EXEMPLO G',
+        ['BANCA EXEMPLO H', 'BANCA EXEMPLO H - SP']  # Trata as duas variações como uma só
     ]
     
     # Dicionário para armazenar resultados
@@ -125,9 +125,9 @@ def main():
         print(f"\nProcessando banca: {banca}")
         
         if isinstance(banca, list):
-            # Caso especial para FGV
+            # Caso especial: banca com duas variações de nome
             df_filtered = df[df['banca'].isin(banca)]
-            banca_name = "FGV_COMBINADA"
+            banca_name = "BANCA_EXEMPLO_H_COMBINADA"
         else:
             df_filtered = df[df['banca'] == banca]
             banca_name = banca
